@@ -1,0 +1,97 @@
+@use "./css-variable";
+@use "themes";
+@mixin button(
+  $size: "m",
+  $backgroundColor: var(--primary-color),
+  $textColor: var(--primary-color-text),
+  $boarderRadius: var(--boarderRadius),
+  $outline-color: var(--primary-color),
+  $backgroundColor-hover-text: var(--text-color),
+  $backgroundColor-hover: var(--primary-color-hover),
+  $disabled-color: var(--primary-color-disabled),
+  $outline: false
+) {
+  border-radius: $boarderRadius;
+  background-color: $backgroundColor;
+  color: $textColor;
+  // transition: $transition-background, $transition-color;
+  padding: 1rem 3rem;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+  font-style: normal;
+  border: none;
+  &:hover {
+    background-color: $backgroundColor-hover;
+  }
+  &:disabled {
+    background-color: $disabled-color;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  @if $outline {
+    border: 1px solid $outline-color;
+    background-color: transparent;
+    &:hover {
+      // background-color: darken($outline-color, 1);
+    }
+    &:disabled {
+      // background-color: lighten($disabled-color, 10);
+    }
+  }
+  else {
+    border: none;
+  }
+
+  @if $size == "m" {
+    font-size: 14px;
+    font-weight: 600;
+  } @else if $size == s {
+    font-size: 14px;
+    font-weight: 500;
+  } @else if $size == l {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+@mixin form-control($shadow: false) {
+  position: relative;
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  padding: 0 5px;
+  border-radius: 5px;
+  outline: none;
+  color: var(--text-color);
+  border: none;
+  padding: 1rem;
+  background-color: var(--input-background);
+  @if ($shadow) {
+    box-shadow: 0 0 5px var(--shadow-color);
+  }
+  &:focus {
+    outline: none;
+    border: 2px solid var(--input-background-focus);
+  }
+  &.error {
+    border: 2px solid var(--error-color);
+  }
+  &.success {
+    border: 2px solid var(--success-color);
+  }
+}
+
+@mixin container(
+  $backgroundColor: transparent,
+  $borderColor: transparent,
+  $borderRadius: var(--boarderRadius)
+) {
+  background-color: $backgroundColor;
+  text-align: center;
+  border-radius: $borderRadius;
+  overflow: hidden;
+  border: 1px solid $borderColor;
+}

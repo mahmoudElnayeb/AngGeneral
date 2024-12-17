@@ -1,0 +1,173 @@
+@use "mixins" as *;
+@use "css-variable" as *;
+
+.container {
+  @include container();
+}
+
+.form-control {
+  @include form-control();
+  & > i {
+    margin-inline: 5px;
+  }
+
+  .input {
+    flex: 1;
+    border: none;
+    outline: none;
+    height: 50px;
+    padding-left: 30px;
+    padding: 1rem 0.75rem;
+    &:not(:placeholder-shown) {
+      padding-top: 2.3rem;
+      padding-bottom: 1rem;
+    }
+    &[type="number"]::-webkit-inner-spin-button,
+    &[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      margin: 0;
+    }
+
+    .disabled {
+      background-color: light-dark(
+        rgba(239, 239, 239, 0.3),
+        rgba(59, 59, 59, 0.3)
+      );
+      color: light-dark(rgb(84, 84, 84), rgb(170, 170, 170));
+    }
+  }
+
+  .placeholder-label {
+    position: absolute;
+    left: 0;
+    padding: 1rem 0.75rem;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: top left;
+    transition: transform 0.1s ease-in-out;
+    color: var(--color-text);
+    margin-left: 30px;
+  }
+
+  .input:focus + .placeholder-label,
+  .input.has-value + .placeholder-label {
+    color: var(--text-color);
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.2rem);
+    font-weight: 600;
+  }
+
+  &[aria-icon="false"] {
+    .input:focus + .placeholder-label,
+    .input.has-value + .placeholder-label {
+      margin-left: 0;
+      transform: scale(0.85) translateY(-0.5rem) translateX(6px);
+    }
+    .input:not(:focus) + .placeholder-label,
+    .input:not(.has-value) + .placeholder-label {
+      margin-left: 0;
+    }
+  }
+}
+
+.form-control-shadow {
+  @include form-control(true);
+}
+
+.btn-primary {
+  @include button();
+}
+.btn-primary-outline {
+  @include button($outline: true);
+}
+.btn-secondary {
+  @include button(
+    $backgroundColor: var(--secondary-color),
+    $textColor: var(--secondary-color-text),
+    $backgroundColor-hover: var(--secondary-color-hover),
+    $disabled-color: var(--secondary-color-disabled),
+    $backgroundColor-hover-text: var(--secondary-color-text)
+  );
+}
+.btn-secondary-outline {
+  @include button(
+    $textColor: var(--secondary-color-text),
+    $disabled-color: var(--secondary-color-disabled),
+    $backgroundColor-hover-text: var(--secondary-color-text),
+    $outline: true
+  );
+}
+
+.btn-success {
+  @include button(
+    $backgroundColor: var(--success-color),
+    $textColor: var(--white),
+    $backgroundColor-hover-text: var(--white),
+    // $backgroundColor-hover: darken(var(--success-color), 1),
+    // $disabled-color: lighten(var(--success-color), 10)
+  );
+}
+.btn-success-outline {
+  @include button(
+    $textColor: var(--white),
+    $backgroundColor-hover-text: var(--white),
+    // $disabled-color: lighten(var(--success-color), 10),
+    $outline-color: var(--success-color),
+    $outline: true
+  );
+}
+.btn-danger {
+  @include button(
+    $backgroundColor: var(--danger-color),
+    $textColor: var(--white),
+    $backgroundColor-hover-text: var(--white),
+    // $backgroundColor-hover: darken(var(--danger-color), 1),
+    // $disabled-color: lighten(var(--danger-color), 10)
+  );
+}
+.btn-danger-outline {
+  @include button(
+    $textColor: var(--white),
+    $backgroundColor-hover-text: var(--white),
+    // $disabled-color: lighten(var(--danger-color), 10),
+    $outline-color: var(--danger-color),
+    $outline: true
+  );
+}
+.btn-error {
+  @include button(
+    $backgroundColor: var(--error-color),
+    $textColor: var(--white),
+    $backgroundColor-hover-text: var(--white),
+    // $backgroundColor-hover: darken(var(--error-color), 1),
+    // $disabled-color: lighten(var(--error-color), 10)
+  );
+}
+.btn-error-outline {
+  @include button(
+    $textColor: var(--white),
+    $backgroundColor-hover-text: var(--white),
+    // $disabled-color: lighten(var(--error-color), 10),
+    $outline-color: var(--error-color),
+    $outline: true
+  );
+}
+.btn-info {
+  @include button(
+    $backgroundColor: var(--info-color),
+    $textColor: var(--white),
+    $backgroundColor-hover-text: var(--white),
+    // $backgroundColor-hover: darken(var(--info-color), 1),
+    // $disabled-color: lighten(var(--info-color), 10)
+  );
+}
+.btn-info-outline {
+  @include button(
+    $textColor: var(--white),
+    $backgroundColor-hover-text: var(--white),
+    // $disabled-color: lighten(var(--info-color), 10),
+    $outline-color: var(--info-color),
+    $outline: true
+  );
+}

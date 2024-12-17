@@ -1,0 +1,13 @@
+@use "colors" as *;
+
+:root {
+  --input-color: #{$soft-peach};
+  --success-color: #{$forest-green};
+  --info-color: #{$slate-gray};
+  --warning-color: #{$amber};
+  --error-color: #{$crimson};
+  --boarderRadius: 16px;
+  --white: #{$white};
+  --input-background: var(--background-color);
+  --input-background-focus: "#e1d1ca";
+}

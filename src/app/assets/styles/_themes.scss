@@ -1,0 +1,48 @@
+@use "colors" as *;
+@use "css-variable" as *;
+
+[data-theme="light"] {
+  //   ----------text-color
+  --text-color: #{$midnight-blue};
+
+  //   ----------primary-color
+  --primary-color: #{$deep-navy};
+  --primary-color-hover: #{$ocean-teal};
+  --primary-color-disabled: #{$soft-peach};
+  --primary-color-text: #{$off-white};
+
+  //   ----------secondary-color;
+  --secondary-color: #{$jet};
+  --secondary-color-hover: #{$jet-dark};
+  --secondary-color-disabled: #{$cool-gray};
+  --secondary-color-text: #{$off-white};
+
+  //   ----------background-color;
+  --background-color: #{$soft-peach};
+
+  // ------------ shadow
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] {
+  //   ----------text-color
+  --text-color: #{$midnight-blue};
+
+  //   ----------primary-color
+  --primary-color: #{$prussian-blue};
+  --primary-color-hover: #{$ocean-teal};
+  --primary-color-disabled: #{$soft-peach};
+  --primary-color-text: #{off-white};
+
+  //   ----------secondary-color;
+  --secondary-color: #{$amber};
+  --secondary-color-hover: #{$jet-dark};
+  --secondary-color-disabled: #{$cool-gray};
+  --secondary-color-text: #{$off-white};
+
+  //   ----------background-color;
+  --background-color: #{$soft-peach};
+
+  // ------------ shadow
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
