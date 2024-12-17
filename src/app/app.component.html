@@ -1,22 +1,25 @@
-<h1 class="input-color">skdfhspdfpsdfsdf</h1>
-<router-outlet></router-outlet>
+<!-- <div class=" w-100 height-100 container m-auto">
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+</div> -->
 
-<button class="btn-primary" (click)="changeMode()">zsdvs</button>
-
-<input class="form-control" />
-
-<form [formGroup]="loginForm">
-    <app-input
-type="password"
-placeholder="Email"
-icon="envelope"
-class="mb-3"
-[formControlName]="'email'"
-[control]="getControl(loginForm,'email')"
-[errorMessages]="{
-  email: 'Email not Valid',
-  required: 'Email Is Required'
-}"
-></app-input>
-
-</form>
+<div class="row">  
+    <header class="col-md-12">
+      stuff...
+    </header>
+    <div class="col-md-1 col-a">
+      stuff...
+    </div>
+    <div class="col-md-10 col-b">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col-md-1 col-c">
+       <div class="col-c-child">
+         Stuff..
+       </div>
+    </div>
+    <footer class="col-md-12">
+      Stuff
+    </footer>
+  </div>

@@ -1,0 +1,13 @@
+.height-100{
+    min-height: 100vh;
+}
+
+.col-c {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .col-c-child {
+    flex: 1;
+  }

@@ -2,12 +2,15 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { InputComponent } from './modules/shared/input/input.component';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { HeaderComponent } from "./modules/shared/header/header.component";
+import { FooterComponent } from "./modules/shared/footer/footer.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet , InputComponent , FormsModule , ReactiveFormsModule],
+  imports: [RouterOutlet, FormsModule, ReactiveFormsModule, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+   standalone: true,
 })
 export class AppComponent {
   title = 'myAppAngNew';
