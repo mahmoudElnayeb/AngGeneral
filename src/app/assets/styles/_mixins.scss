@@ -67,8 +67,9 @@
   outline: none;
   color: var(--text-color);
   border: none;
-  padding: 1rem;
+  padding: .5rem 1rem;
   background-color: var(--input-background);
+  color:var( --color-text);
   @if ($shadow) {
     box-shadow: 0 0 5px var(--shadow-color);
   }
@@ -81,6 +82,10 @@
   }
   &.success {
     border: 2px solid var(--success-color);
+  }
+  .icon{
+    color: var(--text-color);
+
   }
 }
 

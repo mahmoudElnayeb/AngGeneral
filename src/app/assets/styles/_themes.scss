@@ -24,15 +24,18 @@
   --shadow-color: rgba(0, 0, 0, 0.2);
 }
 
+
+// ------------------------------------------------------- dark 
+
 [data-theme="dark"] {
   //   ----------text-color
-  --text-color: #{$midnight-blue};
+  --text-color: #{$off-white};
 
   //   ----------primary-color
   --primary-color: #{$prussian-blue};
   --primary-color-hover: #{$ocean-teal};
   --primary-color-disabled: #{$soft-peach};
-  --primary-color-text: #{off-white};
+  --primary-color-text: #{$off-white};
 
   //   ----------secondary-color;
   --secondary-color: #{$amber};
@@ -41,7 +44,7 @@
   --secondary-color-text: #{$off-white};
 
   //   ----------background-color;
-  --background-color: #{$soft-peach};
+  --background-color: #{$deep-navy};
 
   // ------------ shadow
   --shadow-color: rgba(0, 0, 0, 0.2);

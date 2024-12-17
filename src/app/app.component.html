@@ -4,3 +4,19 @@
 <button class="btn-primary" (click)="changeMode()">zsdvs</button>
 
 <input class="form-control" />
+
+<form [formGroup]="loginForm">
+    <app-input
+type="password"
+placeholder="Email"
+icon="envelope"
+class="mb-3"
+[formControlName]="'email'"
+[control]="getControl(loginForm,'email')"
+[errorMessages]="{
+  email: 'Email not Valid',
+  required: 'Email Is Required'
+}"
+></app-input>
+
+</form>

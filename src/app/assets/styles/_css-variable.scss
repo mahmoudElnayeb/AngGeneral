@@ -11,3 +11,13 @@
   --input-background: var(--background-color);
   --input-background-focus: "#e1d1ca";
 }
+
+
+$transition-background: background-color 0.3s ease;
+$transition-background-hover: background-color 0.2s ease;
+$transition-background-focus: background-color 0.1s ease;
+$transition-background-disabled: background-color 0.2s ease;
+$transition-color: color 0.3s ease;
+$transition-color-hover: color 0.2s ease;
+$transition-color-focus: color 0.1s ease;
+$transition-color-disabled: color 0.2s ease;

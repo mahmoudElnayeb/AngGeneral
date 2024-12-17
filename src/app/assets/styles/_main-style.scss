@@ -15,12 +15,11 @@
     flex: 1;
     border: none;
     outline: none;
-    height: 50px;
-    padding-left: 30px;
-    padding: 1rem 0.75rem;
+    padding-left: 5px;
+    background: transparent;
+    color: var(--text-color);
     &:not(:placeholder-shown) {
-      padding-top: 2.3rem;
-      padding-bottom: 1rem;
+      padding-top: .8rem;
     }
     &[type="number"]::-webkit-inner-spin-button,
     &[type="number"]::-webkit-outer-spin-button {
@@ -42,19 +41,18 @@
   .placeholder-label {
     position: absolute;
     left: 0;
-    padding: 1rem 0.75rem;
     pointer-events: none;
     border: 1px solid transparent;
     transform-origin: top left;
     transition: transform 0.1s ease-in-out;
-    color: var(--color-text);
-    margin-left: 30px;
+    color: var(--text-color);
+    margin-left: 45px;
   }
 
   .input:focus + .placeholder-label,
   .input.has-value + .placeholder-label {
     color: var(--text-color);
-    transform: scale(0.85) translateY(-0.5rem) translateX(0.2rem);
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.4rem);
     font-weight: 600;
   }
 
@@ -170,4 +168,10 @@
     $outline-color: var(--info-color),
     $outline: true
   );
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.8em;
+  margin-top: 5px;
 }

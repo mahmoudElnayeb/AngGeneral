@@ -1,0 +1,15 @@
+<div class="form-control" [ngClass]="{disabled , 'error':(control()?.dirty && control()?.errors)}">
+    @if(icon()) {<i class=" icon fa  fa-{{ icon() }}"></i>}
+    <input [type]="type() === 'password' ? (closedEye ? 'password' : 'text') : type()" class="input"
+        [ngClass]="{ 'has-value': value }" [value]="value" (input)="onInput($event)" (blur)="markAsTouched()"
+        [disabled]="control()?.disabled" />
+    <span class="placeholder-label">{{ placeholder() }}</span>
+    @if (type() === 'password'){
+    <i *ngIf="type() === 'password'" [ngClass]="{'icon fa': true, 'fa-eye': !closedEye, 'fa-eye-slash': closedEye}"
+        (click)="toggleEye()"></i>
+
+    }
+</div>
+<div *ngIf="errorMessage && touched" class="error-message text-start">
+    {{ errorMessage }}
+</div>
