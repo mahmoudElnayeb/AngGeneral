@@ -1,3 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @use "assets/styles/app-ltr" as *;
 @use "assets/styles/app-rtl" as *;
+
+
+body, html {
+    height: 100vh !important;
+    // overflow: hidden; /* Prevent scrolling */
+  }
