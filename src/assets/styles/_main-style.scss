@@ -4,6 +4,27 @@
 .container {
   @include container();
 }
+.container-border {
+  @include container($borderColor: var(--primary-color));
+}
+.container-bg {
+  @include container($backgroundColor: var(--background-color));
+}
+.container-white {
+  @include container($backgroundColor: var(--white));
+}
+.container-white-border {
+  @include container(
+    $backgroundColor: var(--white),
+    $borderColor: var(--primary-color)
+  );
+}
+.container-bg-border {
+  @include container(
+    $backgroundColor: var(--primary-color),
+    $borderColor: var(--primary-color)
+  );
+}
 
 .form-control {
   @include form-control();
@@ -19,7 +40,7 @@
     background: transparent;
     color: var(--text-color);
     &:not(:placeholder-shown) {
-      padding-top: .8rem;
+      padding-top: 0.8rem;
     }
     &[type="number"]::-webkit-inner-spin-button,
     &[type="number"]::-webkit-outer-spin-button {
@@ -176,13 +197,57 @@
   margin-top: 5px;
 }
 
-
-.row{
+.row {
   margin: 0 !important;
   padding: 0 !important;
 }
-*{
-  margin: 0 !important;
-  padding: 0 !important;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+/* Style the scrollbar */
+::-webkit-scrollbar {
+  width: 5px; /* Change scrollbar width */
+  height: 5px; /* Change horizontal scrollbar height */
+}
+
+/* Style the track (part the thumb moves along) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+  border-radius: 10px;
+}
+
+/* Style the thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color); /* Thumb color */
+  border-radius: 10px;
+}
+
+/* Style the thumb when hovered */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color); /* Thumb hover color */
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.h-80 {
+  height: 82vh;
+}
+
+.height-100 {
+  // max-height: 100vh;
+  min-height: 100vh;
+  height: 100vh;
+}
+
+.background {
+  background-color: var(--background-color);
+}
+
+.bg-white {
+  background-color: var(--white);
 }
